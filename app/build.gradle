@@ -1,0 +1,26 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'com.countryguard.app'
+    compileSdk 36
+    buildToolsVersion '35.0.0'
+    defaultConfig {
+        applicationId 'com.countryguard.app'
+        minSdk 29
+        targetSdk 36
+        versionCode 8
+        versionName '3.1'
+        manifestPlaceholders = [appLabel: 'CallSieve']
+    }
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    lint { abortOnError true }
+}
+
+dependencies {
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.5'
+    implementation 'com.googlecode.libphonenumber:libphonenumber:9.0.41'
+}
